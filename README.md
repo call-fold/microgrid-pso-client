@@ -15,4 +15,4 @@
  - open Microgrid Energy Management System-Client(add *.dll to bin)
 
 ## System Sample
-![system](https://cloud.githubusercontent.com/assets/12811161/15616300/64b51ca2-2475-11e6-92ae-93f158ca1bc3.png)
+![system](https://cloud.githubusercontent.com/assets/12811161/15735389/f5a100d8-28ca-11e6-9068-5b09eb263952.png)
