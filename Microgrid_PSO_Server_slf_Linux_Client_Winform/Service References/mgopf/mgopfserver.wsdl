@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WSDL:definitions xmlns:ns="urn:mgopfserver" xmlns:MIME="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://210.34.23.37:9983/mgopfserver.wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:DIME="http://schemas.xmlsoap.org/ws/2002/04/dime/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:SOAP="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:HTTP="http://schemas.xmlsoap.org/wsdl/http/" xmlns="http://schemas.xmlsoap.org/wsdl/" name="mgopfserver" targetNamespace="http://210.34.23.37:9983/mgopfserver.wsdl" xmlns:WSDL="http://schemas.xmlsoap.org/wsdl/">
+  <WSDL:types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="urn:mgopfserver">
+      <xsd:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+    </xsd:schema>
+  </WSDL:types>
+  <WSDL:message name="mgopfserverRequest">
+    <WSDL:part name="processNum" type="xsd:string" />
+    <WSDL:part name="host" type="xsd:string" />
+    <WSDL:part name="user" type="xsd:string" />
+    <WSDL:part name="password" type="xsd:string" />
+    <WSDL:part name="dbName" type="xsd:string" />
+    <WSDL:part name="port" type="xsd:string" />
+    <WSDL:part name="algorithmID" type="xsd:string" />
+  </WSDL:message>
+  <WSDL:message name="mgopfserverResponse">
+    <WSDL:part name="status" type="xsd:int" />
+  </WSDL:message>
+  <WSDL:portType name="mgopfserverPortType">
+    <WSDL:operation name="mgopfserver">
+      <documentation>Service definition of function ns__mgopfserver</documentation>
+      <WSDL:input message="tns:mgopfserverRequest" />
+      <WSDL:output message="tns:mgopfserverResponse" />
+    </WSDL:operation>
+  </WSDL:portType>
+  <WSDL:binding name="mgopfserver" type="tns:mgopfserverPortType">
+    <SOAP:binding transport="http://schemas.xmlsoap.org/soap/http" style="rpc" />
+    <WSDL:operation name="mgopfserver">
+      <SOAP:operation soapAction="" style="rpc" />
+      <WSDL:input>
+        <SOAP:body use="encoded" namespace="urn:mgopfserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:input>
+      <WSDL:output>
+        <SOAP:body use="encoded" namespace="urn:mgopfserver" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+      </WSDL:output>
+    </WSDL:operation>
+  </WSDL:binding>
+  <WSDL:service name="mgopfserver">
+    <documentation>gSOAP 2.8.25 generated service definition</documentation>
+    <WSDL:port name="mgopfserver" binding="tns:mgopfserver">
+      <SOAP:address location="http://210.34.23.37:9983/mgopfserver.cgi" />
+    </WSDL:port>
+  </WSDL:service>
+</WSDL:definitions>
